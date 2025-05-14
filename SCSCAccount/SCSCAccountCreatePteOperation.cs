@@ -58,7 +58,6 @@ namespace SCSCAccount
                     newAccount.CRfF8_ScAccountName = accountName + "dupped";
                     service.Create(newAccount);
 
-
                 }
             }
             catch (FaultException<OrganizationServiceFault> ex)
