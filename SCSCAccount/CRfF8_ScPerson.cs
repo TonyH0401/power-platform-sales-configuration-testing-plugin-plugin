@@ -12,24 +12,11 @@ namespace SalesConfigurationPlugins
 {
 	
 	
-	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum CRfF8_ScAccount_CRfF8_ScAccountStatus
-	{
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Offline", 1)]
-		Offline = 765580001,
-		
-		[System.Runtime.Serialization.EnumMemberAttribute()]
-		[OptionSetMetadataAttribute("Online", 0)]
-		Online = 765580000,
-	}
-	
 	/// <summary>
-	/// Status of the SCAccount
+	/// Status of the SCPerson
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum CRfF8_ScAccount_StateCode
+	public enum CRfF8_ScPerson_StateCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -42,10 +29,10 @@ namespace SalesConfigurationPlugins
 	}
 	
 	/// <summary>
-	/// Reason for the status of the SCAccount
+	/// Reason for the status of the SCPerson
 	/// </summary>
 	[System.Runtime.Serialization.DataContractAttribute()]
-	public enum CRfF8_ScAccount_StatusCode
+	public enum CRfF8_ScPerson_StatusCode
 	{
 		
 		[System.Runtime.Serialization.EnumMemberAttribute()]
@@ -58,12 +45,12 @@ namespace SalesConfigurationPlugins
 	}
 	
 	[System.Runtime.Serialization.DataContractAttribute()]
-	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("crff8_scaccount")]
-	public partial class CRfF8_ScAccount : Microsoft.Xrm.Sdk.Entity
+	[Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("crff8_scperson")]
+	public partial class CRfF8_ScPerson : Microsoft.Xrm.Sdk.Entity
 	{
 		
 		/// <summary>
-		/// Available fields, a the time of codegen, for the crff8_scaccount entity
+		/// Available fields, a the time of codegen, for the crff8_scperson entity
 		/// </summary>
 		public partial class Fields
 		{
@@ -74,16 +61,11 @@ namespace SalesConfigurationPlugins
 			public const string CreatedOnBehalfBy = "createdonbehalfby";
 			public const string CreatedOnBehalfByName = "createdonbehalfbyname";
 			public const string CreatedOnBehalfByYomiName = "createdonbehalfbyyominame";
-			public const string CRfF8_ScAccountId = "crff8_scaccountid";
-			public const string Id = "crff8_scaccountid";
-			public const string CRfF8_ScAccountName = "crff8_scaccountname";
-			public const string CRfF8_ScAccountNumber = "crff8_scaccountnumber";
-			public const string CRfF8_ScAccountStatus = "crff8_scaccountstatus";
-			public const string CRfF8_ScAccountStatusName = "crff8_scaccountstatusname";
-			public const string CRfF8_ScContact_CRfF8_ScAccount_CRfF8_ScAccount = "crff8_SCContact_crff8_SCAccount_crff8_SCAccount";
-			public const string CRfF8_ScPerson = "crff8_scperson";
-			public const string CRfF8_ScPerson_CRfF8_ScPerson_CRfF8_ScAccount = "crff8_SCPerson_crff8_SCPerson_crff8_SCAccount";
-			public const string CRfF8_ScPersonName = "crff8_scpersonname";
+			public const string CRfF8_PersonName = "crff8_personname";
+			public const string CRfF8_PersonNumber = "crff8_personnumber";
+			public const string CRfF8_ScPerson_CRfF8_ScPerson_CRfF8_ScAccount = "CRfF8_ScPerson_CRfF8_ScPerson_CRfF8_ScAccount";
+			public const string CRfF8_ScPersonId = "crff8_scpersonid";
+			public const string Id = "crff8_scpersonid";
 			public const string ImportSequenceNumber = "importsequencenumber";
 			public const string ModifiedBy = "modifiedby";
 			public const string ModifiedByName = "modifiedbyname";
@@ -110,19 +92,19 @@ namespace SalesConfigurationPlugins
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public CRfF8_ScAccount(System.Guid id) : 
+		public CRfF8_ScPerson(System.Guid id) : 
 				base(EntityLogicalName, id)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public CRfF8_ScAccount(string keyName, object keyValue) : 
+		public CRfF8_ScPerson(string keyName, object keyValue) : 
 				base(EntityLogicalName, keyName, keyValue)
 		{
 		}
 		
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public CRfF8_ScAccount(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
+		public CRfF8_ScPerson(Microsoft.Xrm.Sdk.KeyAttributeCollection keyAttributes) : 
 				base(EntityLogicalName, keyAttributes)
 		{
 		}
@@ -131,22 +113,22 @@ namespace SalesConfigurationPlugins
 		/// Default Constructor.
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public CRfF8_ScAccount() : 
+		public CRfF8_ScPerson() : 
 				base(EntityLogicalName)
 		{
 		}
 		
-		public const string PrimaryIdAttribute = "crff8_scaccountid";
+		public const string PrimaryIdAttribute = "crff8_scpersonid";
 		
-		public const string PrimaryNameAttribute = "crff8_scaccountnumber";
+		public const string PrimaryNameAttribute = "crff8_personnumber";
 		
-		public const string EntitySchemaName = "crff8_SCAccount";
+		public const string EntitySchemaName = "crff8_SCPerson";
 		
-		public const string EntityLogicalName = "crff8_scaccount";
+		public const string EntityLogicalName = "crff8_scperson";
 		
-		public const string EntityLogicalCollectionName = "crff8_scaccounts";
+		public const string EntityLogicalCollectionName = "crff8_scpersons";
 		
-		public const string EntitySetName = "crff8_scaccounts";
+		public const string EntitySetName = "crff8_scpersons";
 		
 		/// <summary>
 		/// Unique identifier of the user who created the record.
@@ -260,21 +242,51 @@ namespace SalesConfigurationPlugins
 			}
 		}
 		
-		/// <summary>
-		/// Unique identifier for entity instances
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scaccountid")]
-		public System.Nullable<System.Guid> CRfF8_ScAccountId
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_personname")]
+		public string CRfF8_PersonName
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetAttributeValue<System.Nullable<System.Guid>>("crff8_scaccountid");
+				return this.GetAttributeValue<string>("crff8_personname");
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetAttributeValue("crff8_scaccountid", value);
+				this.SetAttributeValue("crff8_personname", value);
+			}
+		}
+		
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_personnumber")]
+		public string CRfF8_PersonNumber
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<string>("crff8_personnumber");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("crff8_personnumber", value);
+			}
+		}
+		
+		/// <summary>
+		/// Unique identifier for entity instances
+		/// </summary>
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scpersonid")]
+		public System.Nullable<System.Guid> CRfF8_ScPersonId
+		{
+			[System.Diagnostics.DebuggerNonUserCode()]
+			get
+			{
+				return this.GetAttributeValue<System.Nullable<System.Guid>>("crff8_scpersonid");
+			}
+			[System.Diagnostics.DebuggerNonUserCode()]
+			set
+			{
+				this.SetAttributeValue("crff8_scpersonid", value);
 				if (value.HasValue)
 				{
 					base.Id = value.Value;
@@ -286,7 +298,7 @@ namespace SalesConfigurationPlugins
 			}
 		}
 		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scaccountid")]
+		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scpersonid")]
 		public override System.Guid Id
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
@@ -297,101 +309,7 @@ namespace SalesConfigurationPlugins
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.CRfF8_ScAccountId = value;
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scaccountname")]
-		public string CRfF8_ScAccountName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("crff8_scaccountname");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("crff8_scaccountname", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scaccountnumber")]
-		public string CRfF8_ScAccountNumber
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<string>("crff8_scaccountnumber");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("crff8_scaccountnumber", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scaccountstatus")]
-		public virtual CRfF8_ScAccount_CRfF8_ScAccountStatus? CRfF8_ScAccountStatus
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return ((CRfF8_ScAccount_CRfF8_ScAccountStatus?)(EntityOptionSetEnum.GetEnum(this, "crff8_scaccountstatus")));
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("crff8_scaccountstatus", value.HasValue ? new Microsoft.Xrm.Sdk.OptionSetValue((int)value) : null);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scaccountstatusname")]
-		public string CRfF8_ScAccountStatusName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("crff8_scaccountstatus"))
-				{
-					return this.FormattedValues["crff8_scaccountstatus"];
-				}
-				else
-				{
-					return default(string);
-				}
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scperson")]
-		public Microsoft.Xrm.Sdk.EntityReference CRfF8_ScPerson
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetAttributeValue<Microsoft.Xrm.Sdk.EntityReference>("crff8_scperson");
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetAttributeValue("crff8_scperson", value);
-			}
-		}
-		
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scpersonname")]
-		public string CRfF8_ScPersonName
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				if (this.FormattedValues.Contains("crff8_scperson"))
-				{
-					return this.FormattedValues["crff8_scperson"];
-				}
-				else
-				{
-					return default(string);
-				}
+				this.CRfF8_ScPersonId = value;
 			}
 		}
 		
@@ -658,15 +576,15 @@ namespace SalesConfigurationPlugins
 		}
 		
 		/// <summary>
-		/// Status of the SCAccount
+		/// Status of the SCPerson
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statecode")]
-		public virtual CRfF8_ScAccount_StateCode? StateCode
+		public virtual CRfF8_ScPerson_StateCode? StateCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((CRfF8_ScAccount_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
+				return ((CRfF8_ScPerson_StateCode?)(EntityOptionSetEnum.GetEnum(this, "statecode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -693,15 +611,15 @@ namespace SalesConfigurationPlugins
 		}
 		
 		/// <summary>
-		/// Reason for the status of the SCAccount
+		/// Reason for the status of the SCPerson
 		/// </summary>
 		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("statuscode")]
-		public virtual CRfF8_ScAccount_StatusCode? StatusCode
+		public virtual CRfF8_ScPerson_StatusCode? StatusCode
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return ((CRfF8_ScAccount_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
+				return ((CRfF8_ScPerson_StatusCode?)(EntityOptionSetEnum.GetEnum(this, "statuscode")));
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
@@ -777,39 +695,20 @@ namespace SalesConfigurationPlugins
 		}
 		
 		/// <summary>
-		/// N:N crff8_SCContact_crff8_SCAccount_crff8_SCAccount
+		/// 1:N crff8_SCPerson_crff8_SCPerson_crff8_SCAccount
 		/// </summary>
-		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("crff8_SCContact_crff8_SCAccount_crff8_SCAccount")]
-		public System.Collections.Generic.IEnumerable<SalesConfigurationPlugins.CRfF8_ScContact> CRfF8_ScContact_CRfF8_ScAccount_CRfF8_ScAccount
-		{
-			[System.Diagnostics.DebuggerNonUserCode()]
-			get
-			{
-				return this.GetRelatedEntities<SalesConfigurationPlugins.CRfF8_ScContact>("crff8_SCContact_crff8_SCAccount_crff8_SCAccount", null);
-			}
-			[System.Diagnostics.DebuggerNonUserCode()]
-			set
-			{
-				this.SetRelatedEntities<SalesConfigurationPlugins.CRfF8_ScContact>("crff8_SCContact_crff8_SCAccount_crff8_SCAccount", null, value);
-			}
-		}
-		
-		/// <summary>
-		/// N:1 crff8_SCPerson_crff8_SCPerson_crff8_SCAccount
-		/// </summary>
-		[Microsoft.Xrm.Sdk.AttributeLogicalNameAttribute("crff8_scperson")]
 		[Microsoft.Xrm.Sdk.RelationshipSchemaNameAttribute("crff8_SCPerson_crff8_SCPerson_crff8_SCAccount")]
-		public SalesConfigurationPlugins.CRfF8_ScPerson CRfF8_ScPerson_CRfF8_ScPerson_CRfF8_ScAccount
+		public System.Collections.Generic.IEnumerable<SalesConfigurationPlugins.CRfF8_ScAccount> CRfF8_ScPerson_CRfF8_ScPerson_CRfF8_ScAccount
 		{
 			[System.Diagnostics.DebuggerNonUserCode()]
 			get
 			{
-				return this.GetRelatedEntity<SalesConfigurationPlugins.CRfF8_ScPerson>("crff8_SCPerson_crff8_SCPerson_crff8_SCAccount", null);
+				return this.GetRelatedEntities<SalesConfigurationPlugins.CRfF8_ScAccount>("crff8_SCPerson_crff8_SCPerson_crff8_SCAccount", null);
 			}
 			[System.Diagnostics.DebuggerNonUserCode()]
 			set
 			{
-				this.SetRelatedEntity<SalesConfigurationPlugins.CRfF8_ScPerson>("crff8_SCPerson_crff8_SCPerson_crff8_SCAccount", null, value);
+				this.SetRelatedEntities<SalesConfigurationPlugins.CRfF8_ScAccount>("crff8_SCPerson_crff8_SCPerson_crff8_SCAccount", null, value);
 			}
 		}
 		
@@ -818,7 +717,7 @@ namespace SalesConfigurationPlugins
 		/// <param name="anonymousType">LINQ anonymous type.</param>
 		/// </summary>
 		[System.Diagnostics.DebuggerNonUserCode()]
-		public CRfF8_ScAccount(object anonymousType) : 
+		public CRfF8_ScPerson(object anonymousType) : 
 				this()
 		{
             foreach (var p in anonymousType.GetType().GetProperties())
@@ -836,9 +735,9 @@ namespace SalesConfigurationPlugins
                 {
                     case "id":
                         base.Id = (System.Guid)value;
-                        Attributes["crff8_scaccountid"] = base.Id;
+                        Attributes["crff8_scpersonid"] = base.Id;
                         break;
-                    case "crff8_scaccountid":
+                    case "crff8_scpersonid":
                         var id = (System.Nullable<System.Guid>) value;
                         if(id == null){ continue; }
                         base.Id = id.Value;

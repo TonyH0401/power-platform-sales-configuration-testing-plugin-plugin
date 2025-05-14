@@ -98,6 +98,12 @@
   <ItemGroup>
     <Compile Include="Analyze.cs" />
     <Compile Include="AnalyzeSentiment.cs" />
+    <Compile Include="SCSCAccountDeletePreOperation.cs" />
+    <Compile Include="CRfF8_ScContact.cs" />
+    <Compile Include="SCSCAccountFinal.cs" />
+    <Compile Include="CRfF8_ScPerson.cs" />
+    <Compile Include="SCSCAccountDuplicateRela.cs" />
+    <Compile Include="SCSCAccountDuplicate.cs" />
     <Compile Include="CRfF8_ScAccount.cs" />
     <Compile Include="DataverseContext.cs" />
     <Compile Include="EntityOptionSetEnum.cs" />

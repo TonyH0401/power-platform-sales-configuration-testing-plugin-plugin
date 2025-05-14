@@ -38,6 +38,28 @@ namespace SalesConfigurationPlugins
 				return this.CreateQuery<SalesConfigurationPlugins.CRfF8_ScAccount>();
 			}
 		}
+		
+		/// <summary>
+		/// Gets a binding to the set of all <see cref="SalesConfigurationPlugins.CRfF8_ScContact"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<SalesConfigurationPlugins.CRfF8_ScContact> CRfF8_ScContactSet
+		{
+			get
+			{
+				return this.CreateQuery<SalesConfigurationPlugins.CRfF8_ScContact>();
+			}
+		}
+		
+		/// <summary>
+		/// Gets a binding to the set of all <see cref="SalesConfigurationPlugins.CRfF8_ScPerson"/> entities.
+		/// </summary>
+		public System.Linq.IQueryable<SalesConfigurationPlugins.CRfF8_ScPerson> CRfF8_ScPersonSet
+		{
+			get
+			{
+				return this.CreateQuery<SalesConfigurationPlugins.CRfF8_ScPerson>();
+			}
+		}
 	}
 	
 	/// <summary>
